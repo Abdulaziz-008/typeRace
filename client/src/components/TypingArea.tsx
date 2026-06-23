@@ -14,14 +14,18 @@ interface Props {
 }
 
 export default function TypingArea({ chars, input, onInput, disabled, currentIndex }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (!disabled) inputRef.current?.focus();
   }, [disabled]);
 
+  const focusInput = () => {
+    inputRef.current?.focus();
+  };
+
   return (
-    <div className="typing-container" onClick={() => inputRef.current?.focus()}>
+    <div className="typing-container" onClick={focusInput} onTouchStart={focusInput}>
       <div className="text-display">
         {chars.map((c, i) => (
           <span
@@ -33,11 +37,11 @@ export default function TypingArea({ chars, input, onInput, disabled, currentInd
               i === currentIndex ? 'cursor' : ''
             ].join(' ')}
           >
-            {c.char === ' ' ? ' ' : c.char}
+            {c.char}
           </span>
         ))}
       </div>
-      <input
+      <textarea
         ref={inputRef}
         className="hidden-input"
         value={input}
@@ -47,6 +51,7 @@ export default function TypingArea({ chars, input, onInput, disabled, currentInd
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck={false}
+        rows={1}
       />
     </div>
   );

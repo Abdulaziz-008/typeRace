@@ -197,10 +197,17 @@ body {
 .hidden-input {
   position: absolute;
   opacity: 0;
-  width: 1px;
-  height: 1px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 16px; /* 16px dan kichik bo'lsa iOS zoom qiladi */
   pointer-events: none;
 }
+.typing-container { position: relative; }
 
 /* ===== RACE PROGRESS ===== */
 .race-progress {

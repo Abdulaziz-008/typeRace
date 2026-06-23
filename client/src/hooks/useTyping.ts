@@ -31,9 +31,16 @@ export function useTyping(text: string, onProgress?: (p: number, wpm: number) =>
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, []);
 
-  const handleInput = useCallback((value: string) => {
+  const handleInput = useCallback((rawValue: string) => {
     if (finished) return;
-    if (!startTime && value.length > 0) {
+
+    // Strip newlines mobile keyboards may inject
+    const value = rawValue.replace(/\n/g, '');
+
+    // Only allow typing up to text length
+    const capped = value.slice(0, text.length);
+
+    if (!startTime && capped.length > 0) {
       const now = Date.now();
       setStartTime(now);
       timerRef.current = setInterval(() => {
@@ -41,34 +48,34 @@ export function useTyping(text: string, onProgress?: (p: number, wpm: number) =>
       }, 500);
     }
 
-    // Count errors
-    if (value.length > input.length) {
-      const idx = value.length - 1;
-      totalTyped.current++;
-      if (value[idx] !== text[idx]) totalErrors.current++;
+    // Count new errors only when adding characters
+    if (capped.length > input.length) {
+      for (let i = input.length; i < capped.length; i++) {
+        totalTyped.current++;
+        if (capped[i] !== text[i]) totalErrors.current++;
+      }
     }
 
-    setInput(value);
+    setInput(capped);
 
     const now = Date.now();
     const elapsed = startTime ? (now - startTime) / 60000 : 0.001;
-    const wordsTyped = value.length / 5;
+    const wordsTyped = capped.length / 5;
     const currentWpm = elapsed > 0 ? Math.round(wordsTyped / elapsed) : 0;
     setWpm(currentWpm);
 
     const correctChars = totalTyped.current - totalErrors.current;
     setAccuracy(totalTyped.current > 0 ? Math.round((correctChars / totalTyped.current) * 100) : 100);
 
-    const progress = Math.min(100, Math.round((value.length / text.length) * 100));
+    const progress = Math.min(100, Math.round((capped.length / text.length) * 100));
     onProgress?.(progress, currentWpm);
 
-    if (value === text) {
+    if (capped === text) {
       if (timerRef.current) clearInterval(timerRef.current);
       setFinished(true);
     }
   }, [text, input, startTime, finished, onProgress]);
 
-  // Character-level state
   const chars = text.split('').map((char, i) => {
     if (i >= input.length) return { char, state: 'pending' as const };
     if (input[i] === char) return { char, state: 'correct' as const };

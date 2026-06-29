@@ -25,7 +25,8 @@ export default function RaceProgress({ players, myId }: Props) {
               className="progress-car"
               style={{
                 left: `calc(${player.progress}% - 28px)`,
-                color: COLORS[idx % COLORS.length]
+                color: COLORS[idx % COLORS.length],
+                transform: 'scaleX(-1)'
               }}
             >
               🏎️

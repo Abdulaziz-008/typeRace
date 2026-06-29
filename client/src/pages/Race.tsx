@@ -208,7 +208,12 @@ export default function Race() {
               <span className="result-time">{p.finishTime?.toFixed(1)}s</span>
             </div>
           ))}
-          <button className="btn-primary" onClick={goBack} style={{ marginTop: 24 }}>Back to Lobby</button>
+          <div className="result-actions">
+            <button className="btn-primary" onClick={() => {
+              socket.emit('create_room', { username, lang });
+            }}>Qayta boshlash 🔄</button>
+            <button className="btn-secondary" onClick={goBack}>Lobby'ga qaytish</button>
+          </div>
         </div>
       </div>
     );

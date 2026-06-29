@@ -423,6 +423,14 @@ body {
 .result-wpm { color: var(--accent); font-family: var(--font-mono); font-weight: 700; }
 .result-time { color: var(--text-muted); font-family: var(--font-mono); font-size: 14px; }
 
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
 .room-badge {
   font-family: var(--font-mono);
   font-size: 13px;

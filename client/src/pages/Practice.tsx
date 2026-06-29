@@ -42,17 +42,18 @@ export default function Practice() {
     <div className="page">
       <div className="page-header">
         <h2>Solo Practice</h2>
-        <div className="lang-selector">
-          {(Object.keys(LANG_LABELS) as Language[]).map(l => (
-            <button
-              key={l}
-              className={`lang-btn ${lang === l ? 'active' : ''}`}
-              onClick={() => changeLang(l)}
-            >
-              {LANG_LABELS[l]}
-            </button>
-          ))}
-        </div>
+        <button className="btn-secondary" onClick={restart}>🔄 Yangi matn</button>
+      </div>
+      <div className="lang-selector">
+        {(Object.keys(LANG_LABELS) as Language[]).map(l => (
+          <button
+            key={l}
+            className={`lang-btn ${lang === l ? 'active' : ''}`}
+            onClick={() => changeLang(l)}
+          >
+            {LANG_LABELS[l]}
+          </button>
+        ))}
       </div>
 
       <Stats wpm={wpm} accuracy={accuracy} elapsed={elapsedTime} progress={progress} />

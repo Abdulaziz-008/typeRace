@@ -18,27 +18,49 @@ const TEXTS = {
     "The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.",
     "To be or not to be, that is the question. Whether tis nobler in the mind to suffer.",
     "All that glitters is not gold. Often have you heard that told. Many a man his life hath sold.",
-    "In the beginning God created the heavens and the earth. The earth was without form and void."
+    "In the beginning God created the heavens and the earth. The earth was without form and void.",
+    "Success is not final, failure is not fatal. It is the courage to continue that counts.",
+    "The only way to do great work is to love what you do. Stay hungry, stay foolish.",
+    "Life is what happens when you are busy making other plans. Enjoy the little things.",
+    "It does not matter how slowly you go as long as you do not stop moving forward.",
+    "Believe you can and you are halfway there. Hard work beats talent when talent does not work hard.",
+    "The future belongs to those who believe in the beauty of their dreams."
   ],
   uz: [
     "Tez yuguruvchi jigarrang tulki dangasa itning ustidan sakrab o'tdi. Hayot qisqa, san'at abadiy.",
     "Bilim olish har bir musulmon erkak va ayol uchun farzdir. Ilm izlash uchun Xitoyga ham boring.",
     "O'zbek xalqi qadimdan mehmondo'st va bag'rikeng xalq bo'lib kelgan. Biz kelajakka ishonch bilan qaraymiz.",
-    "Vatan tuproqi oltindan qimmat. Ona tilimiz bizning eng katta boyligimizdir. Tilni asrang, ardoqlang."
+    "Vatan tuproqi oltindan qimmat. Ona tilimiz bizning eng katta boyligimizdir. Tilni asrang, ardoqlang.",
+    "Kitob bilim manbaidir. Ko'p o'qigan kishi ko'p biladi va hayotda muvaffaqiyatga erishadi.",
+    "Mehnat qilsang, maqsadingga yetasan. Qiynalmasdan erishilgan narsa qadrlanmaydi.",
+    "Do'st achitib gapirar, dushman kuldirib. Haqiqiy do'st qiyinchilikda bilinadi.",
+    "Sabr qilgan murodiga yetgan. Ishonch bilan harakat qil, natija albatta bo'ladi.",
+    "Yoshlik bir marta keladi, uni behuda ketkazma. Har kuni yangi narsa o'rgan.",
+    "El uchun yasha, el seni ulug'laydi. Yaxshilik qil, daryoga tashla, baliq bilmasa ham xoliq biladi."
   ],
   ru: [
     "Быстрая коричневая лиса прыгает через ленивую собаку. Жизнь прекрасна и удивительна.",
     "Москва слезам не верит. В гостях хорошо а дома лучше. Без труда не вытащишь рыбку из пруда.",
     "Россия великая страна с богатой историей и культурой. Мы гордимся нашим прошлым и верим в будущее.",
-    "Читайте книги они открывают новые миры. Знание сила. Учиться никогда не поздно для любого человека."
+    "Читайте книги они открывают новые миры. Знание сила. Учиться никогда не поздно для любого человека.",
+    "Терпение и труд всё перетрут. Кто рано встаёт тому Бог подаёт удачу и везение.",
+    "Дорогу осилит идущий. Не бойся идти медленно бойся стоять на месте и не двигаться.",
+    "Друг познаётся в беде. Настоящая дружба проверяется временем и трудными ситуациями.",
+    "Лучше поздно чем никогда. Главное начать и не останавливаться на пути к своей цели.",
+    "Слово не воробей, вылетит не поймаешь. Думай перед тем как говорить что-либо.",
+    "Нет ничего невозможного для человека с сильным желанием и упорным трудом."
   ],
   de: [
     "Der schnelle braune Fuchs springt über den faulen Hund. Das Leben ist schön und wunderbar.",
     "Deutsch ist eine schöne Sprache mit langer Geschichte. Lernen macht Spaß wenn man es richtig angeht.",
+    "Übung macht den Meister. Wer viel arbeitet wird auch viel erreichen in seinem Leben.",
+    "Der frühe Vogel fängt den Wurm. Fleiß und Ausdauer führen zum Erfolg im Leben."
   ],
   fr: [
     "Le rapide renard brun saute par-dessus le chien paresseux. La vie est belle et merveilleuse.",
     "La France est un beau pays avec une longue histoire. Paris est la ville de l'amour et de la lumière.",
+    "La pratique rend parfait. Celui qui travaille dur atteindra ses objectifs dans la vie.",
+    "Le courage c'est de savoir avoir peur et d'aller de l'avant malgré tout."
   ]
 };
 
